@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+
+    <meta property="og:title" content="ConceptLab: Creative Generation using Diffusion Prior Constraints"/>
+    <meta property="og:url" content="https://ConceptLab.github.io/ConceptLab/"/>
+    <meta property="og:image" content="static/images/og_tag_header_image.jpg"/>
+    <meta property="og:image:width" content="1200"/>
+    <meta property="og:image:height" content="630"/>
+
+
+    <title>ConceptLab</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+          rel="stylesheet">
+    <link rel="icon" href="static/images/og_tag_header_image.jpg">
+
+    <link rel="stylesheet" href="static/css/bulma.min.css">
+    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+    <script defer src="static/js/fontawesome.all.min.js"></script>
+    <script src="static/js/bulma-carousel.min.js"></script>
+    <script src="static/js/bulma-slider.min.js"></script>
+    <script src="static/js/index.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+</head>
+<body>
+
+
+<section class="publication-header">
+    <div class="hero-body">
+        <div class="container is-max-widescreen">
+            <!-- <div class="columns is-centered"> -->
+            <div class="column has-text-centered">
+                <h1 class="title is-1 publication-title">ConceptLab: Creative Generation using Diffusion Prior Constraints</h1>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="publication-author-block">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <div class="is-size-3 publication-authors">
+                    </div>
+
+                    <div class="is-size-3 publication-authors">
+                        <span class="author-block"><target="_blank">Anonymous Authors</span>
+                    </div>
+
+                    <div class="column has-text-centered">
+                        <div class="publication-links">
+              
+              <span class="link-block">
+                <a href="<arxiv_link>" target="_blank"
+                   class="external-link button is-normal is-rounded">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+                            <!-- Colab Link. -->
+                            <span class="link-block">
+                <a href="https://github.com/kfir99/ConceptLab" target="_blank"
+                   class="external-link button is-normal is-rounded">
+                <span class="icon">
+                  <i class="fab fa-github"></i>
+                </span>
+                <span>Code</span>
+              </a>
+              </span>
+
+                            <!-- <span class="link-block">
+                              <a href=""  target="_blank"
+                                 class="external-link button is-normal is-rounded">
+                                <span class="icon">
+                                    <i class="fas fa-laptop"></i>
+                                </span>
+                                <span>Demo</span>
+                              </a>
+                             </span> -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="hero is-small">
+    <!-- <div class="hero-body"> -->
+    <section class="hero teaser">
+        <div class="container is-max-desktop">
+            <div class="hero-body">
+                <!-- <div id="results-carousel" class="carousel results-carousel"> -->
+                <div class="container">
+                    <div class="item">
+                        <div class="column is-centered has-text-centered">
+                            <img src="static/figures/teaser.png" alt="NeTI"/>
+                            <h2 class="subtitle">
+                                New pets generated using ConceptLab. Each pair depicts a learned concept that was optimized to be novel and not match existing
+members of the pet category. Running our method with different seeds allows us to generate a variety of different brand-new concepts.
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+                <!--  </div> -->
+            </div>
+        </div>
+        <!--  </div> -->
+    </section>
+
+    <section class="section hero is-light">
+        <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <!-- div class="item">
+                      <p style="margin-bottom: 30px">
+                    <video poster="" id="tree" autoplay controls muted loop height="100%">
+                      <source src="static/figures/video.mp4"
+                      type="video/mp4">
+                    </video>
+                    </p>
+                    </div -->
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p>
+                          Recent text-to-image generative models have enabled us
+to transform our words into vibrant, captivating imagery.
+The surge of personalization techniques that has followed
+has also allowed us to imagine unique concepts in new
+scenes. However, an intriguing question remains: How can
+we generate a new, imaginary concept that has never been
+seen before? In this paper, we present the task of creative
+text-to-image generation, where we seek to generate new
+members of a broad category (e.g., generating a pet that dif-
+fers from all existing pets). We leverage the under-studied
+Diffusion Prior models and show that the creative gener-
+ation problem can be formulated as an optimization pro-
+cess over the output space of the diffusion prior, resulting
+in a set of “prior constraints”. To keep our generated con-
+cept from converging into existing members, we incorporate
+a question-answering model that adaptively adds new con-
+straints to the optimization problem, encouraging the model
+to discover increasingly more unique creations. Finally, we
+show that our prior constraints also serve as a strong mix-
+ing mechanism allowing us to create hybrids between gen-
+erated concepts, introducing more flexibility into the cre-
+ative process.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--/ Abstract. -->
+        </div>
+    </section>
+
+    <!-- <section class="hero is-small">
+      <div class="hero-body">
+        <div class="container">
+          <h2 class="title has-text-centered">Video</h2>
+          <center>
+            <iframe width="630" height="354" src="" title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen></iframe>
+          </center>
+        </div>
+      </div>
+    </section> -->
+
+    <section class="hero is-small">
+        <div class="hero-body">
+            <div class="container">
+                <h2 class="title has-text-centered">Examples of New Concepts Generated <br> with ConceptLab
+                </h2>
+                <div id="results-carousel" class="carousel results-carousel">
+                    <div class="column is-centered has-text-centered">
+                        <img src="static/figures/carousel_edits/500_210.png" alt="art1" width="95%"/>
+                    </div>
+                    <div class="column is-centered has-text-centered">
+                        <img src="static/figures/carousel_edits/250_202.png" alt="art2" width="95%"/>
+                    </div>
+                    <div class="column is-centered has-text-centered">
+                        <img src="static/figures/carousel_edits/250_208.png" alt="art3" width="95%"/>
+                    </div>
+                    <div class="column is-centered has-text-centered">
+                        <img src="static/figures/carousel_edits/super_hero_purple.png" alt="superheropurple" width="95%"/>
+                    </div>
+                    <div class="column is-centered has-text-centered">
+                        <img src="static/figures/carousel_edits/sealrat.png" alt="sealrat" width="95%"/>
+                    </div>
+                    <div class="column is-centered has-text-centered">
+                        <img src="static/figures/carousel_edits/building.png" alt="sealrat" width="95%"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section hero is-light">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">How Does it Work?</h2>
+                    <div class="content has-text-justified">
+                    </div>
+                    <div class="column is-centered has-text-centered">
+                        <img src="static/figures/method.png" alt="ConceptLab" width="100%"/>
+                    </div>
+                    <ul class="column is-centered has-text-justified">
+                      <li> We optimize a single embedding \(\mathcal{v_*}\) representing the novel concept we wish to generate (e.g., a new type of "pet").
+                      </li>
+                      <br>
+                      <li> We compute a set of losses encouraging the learned embedding to be similar to that of the general class "pet" while being different from a set of negative sub-classes (e.g., a set of existing pets such as "dog", "cat")
+                      </li>
+                      <br>
+                      <li> To gradually generate more unique creations, during training, we query a pretrained BLIP-2 VQA model to expand the set of negative classes based on the currently generated novel concept (e.g., we add the token "hamster" to shift our embedding from generating images resembling a "hamster").
+                      </li>
+                      <br>
+                    </ul>
+                </div>
+            </div>
+          </p>
+        </div>
+    </section>
+
+    <section class="section hero">
+        <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">What Can it Do?</h2>
+                    <div class="content has-text-centered">
+                    </div>
+                    <h3 class="title is-4">Generating Creative New Concepts</h3>
+                    <p class="content has-text-centered">
+                        Using our Adaptive Negatives system, users can generate new concepts that are different from existing ones.
+                        Concepts can be tangible entities, like "Super-Hero", "Building" or "Pet", or abstract ones, like "Art Style".
+                    </p>
+                </div>
+            </div>
+            <div id="results-carousel-2" class="carousel results-carousel">
+                <div class="column is-centered has-text-centered">
+                  <img src="static/figures/new_entities.png" alt="new_entities" width="80%"/>
+                </div>
+                <div class="column is-centered has-text-centered">
+                  <img src="static/figures/new_art.png" alt="new_entities" width="80%"/>
+                </div>
+            </div>
+
+            <div class="columns is-centered has-text-centered">
+              <div class="column is-four-fifths">
+                  <div class="content has-text-centered">
+                  </div>
+                  <h3 class="title is-4">Evolutionary Generation</h3>
+                  <p class="content has-text-centered">
+                      New concepts can be trained to be similar to two or more concepts generated using Creative Generation, resulting in a hybrid between them.
+                      This process can be repeated to create further "Generations", each one being a hybrid between the previous two.
+                  </p>
+              </div>
+          </div>
+            <div class="column is-centered has-text-centered">
+                  <img src="static/figures/mix_tree.png" alt="mix_tree" width="80%"/>
+              </div>
+<!--          <div id="results-carousel-3" class="carousel results-carousel">-->
+<!--              <div class="column is-centered has-text-centered">-->
+<!--                  <img src="static/figures/decomposition_1.png" alt="decomposition_1" width="80%"/>-->
+<!--              </div>-->
+<!--              <div class="column is-centered has-text-centered">-->
+<!--                  <img src="static/figures/decomposition_2.png" alt="decomposition_2" width="80%"/>-->
+<!--              </div>-->
+<!--          </div>-->
+
+<!--          <div class="columns is-centered has-text-centered">-->
+<!--            <div class="column is-four-fifths">-->
+<!--                <div class="content has-text-centered">-->
+<!--                </div>-->
+<!--                <h3 class="title is-4">Style Mixing</h3>-->
+<!--                <p class="content has-text-centered">-->
+<!--                    We can also mix the geometry and appearance of two learned concepts.-->
+<!--                    By starting to perform the mixing at different timesteps, we can control how much information is passed from the geometry concept-->
+<!--                    to the output image.-->
+<!--                </p>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div id="results-carousel-4" class="carousel results-carousel">-->
+<!--            <div class="column is-centered has-text-centered">-->
+<!--                <img src="static/figures/mixing_1.png" alt="mixing_1" width="90%"/>-->
+<!--            </div>-->
+<!--            <div class="column is-centered has-text-centered">-->
+<!--                <img src="static/figures/mixing_2.png" alt="mixing_2" width="90%"/>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        </div>-->
+<!--        </div>-->
+
+    </section>
+
+
+    <footer class="footer">
+        <div class="columns is-centered">
+            <div class="column is-8">
+                <div class="content">
+                    <p>
+                        This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+                        Commons Attribution-ShareAlike 4.0 International License</a>.
+                    </p>
+                    <p>
+                        Website source code based on the <a href="https://nerfies.github.io/"> Nerfies</a> project page.
+                        If you want to reuse their <a href="https://github.com/nerfies/nerfies.github.io">source code</a>, please credit them appropriately.
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </footer>
+
+</body>
+</html>

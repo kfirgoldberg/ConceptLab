@@ -53,7 +53,7 @@
 <!--                    <div class="is-size-3 publication-authors">-->
 <!--                    </div>-->
 
-                    <div class="is-size-4 publication-authors">
+                    <div class="is-size-5 publication-authors">
                         <span class="author-block"><a href="https://eladrich.github.io/" target="_blank">Elad Richardson</a>,</span>
                         <span class="author-block"><a href="https://github.com/kfirgoldberg" target="_blank">Kfir Goldberg</a>,</span>
                         <span class="author-block"><a href="https://yuval-alaluf.github.io/" target="_blank">Yuval Alaluf</a>,</span>
@@ -68,7 +68,7 @@
                         <div class="publication-links">
               
               <span class="link-block">
-                <a href="<arxiv_link>" target="_blank"
+                <a href="" target="_blank"
                    class="external-link button is-normal is-rounded">
                   <span class="icon">
                     <i class="ai ai-arxiv"></i>
@@ -146,28 +146,7 @@ members of the pet category. Running our method with different seeds allows us t
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                          Recent text-to-image generative models have enabled us
-to transform our words into vibrant, captivating imagery.
-The surge of personalization techniques that has followed
-has also allowed us to imagine unique concepts in new
-scenes. However, an intriguing question remains: How can
-we generate a new, imaginary concept that has never been
-seen before? In this paper, we present the task of creative
-text-to-image generation, where we seek to generate new
-members of a broad category (e.g., generating a pet that dif-
-fers from all existing pets). We leverage the under-studied
-Diffusion Prior models and show that the creative gener-
-ation problem can be formulated as an optimization pro-
-cess over the output space of the diffusion prior, resulting
-in a set of “prior constraints”. To keep our generated con-
-cept from converging into existing members, we incorporate
-a question-answering model that adaptively adds new con-
-straints to the optimization problem, encouraging the model
-to discover increasingly more unique creations. Finally, we
-show that our prior constraints also serve as a strong mix-
-ing mechanism allowing us to create hybrids between gen-
-erated concepts, introducing more flexibility into the cre-
-ative process.
+                            Recent text-to-image generative models have enabled us to transform our words into vibrant, captivating imagery. The surge of personalization techniques that has followed has also allowed us to imagine unique concepts in new scenes. However, an intriguing question remains: How can we generate a <i>new</i>, imaginary concept that has never been seen before? In this paper, we present the task of <i>creative text-to-image generation</i>, where we seek to generate new members of a broad category  (e.g., generating a pet that differs from all existing pets). We leverage the under-studied Diffusion Prior models and show that the creative generation problem can be formulated as an optimization process over the output space of the diffusion prior, resulting in a set of "prior constraints". To keep our generated concept from converging into existing members, we incorporate a question-answering model that adaptively adds new constraints to the optimization problem, encouraging the model to discover increasingly more unique creations. Finally, we show that our prior constraints can also serve as a strong mixing mechanism allowing us to create hybrids between generated concepts, introducing even more flexibility into the creative process.
                         </p>
                     </div>
                 </div>
@@ -192,8 +171,7 @@ ative process.
     <section class="hero is-small">
         <div class="hero-body">
             <div class="container">
-                <h2 class="title has-text-centered">Examples of Concepts Generated <br> with ConceptLab
-                </h2>
+                <h2 class="title has-text-centered">Examples of Concepts Generated with ConceptLab </h2>
                 <div id="concept-carousel" class="carousel results-carousel">
                     <div class="column is-centered has-text-centered">
                         <p  style="font-size: 40px;" > Superhero </p>
@@ -221,9 +199,9 @@ ative process.
                     </div>
                 </div>
             </div>
+            <br>
             <div class="container">
-                <h2 class="title has-text-centered">Examples of Art Styles Generated <br> with ConceptLab
-                </h2>
+                <h2 class="title has-text-centered">Examples of Art Styles Generated with ConceptLab </h2>
                 <div id="art-carousel" class="carousel results-carousel">
                     <div class="column is-centered has-text-centered">
                         <img src="static/figures/carousel_edits/500_210.png" alt="art1" width="95%"/>
@@ -269,11 +247,10 @@ ative process.
                       <li> We optimize a single embedding \(\mathcal{v_*}\) representing the novel concept we wish to generate (e.g., a new type of "pet").
                       </li>
                       <br>
-                      <li> We compute a set of losses encouraging the learned embedding to be similar to that of the general class "pet" while being different from a set of negative sub-classes (e.g., a set of existing pets such as "dog", "cat")
+                      <li> We compute a set of losses encouraging the learned embedding to be similar to that of the target category ("pet") while being different from a set of negative sub-classes (e.g., "dog", "cat").
                       </li>
                       <br>
-                      <li> To gradually generate more unique creations, during training, we query a pretrained BLIP-2 VQA model to expand the set of negative classes based on the currently generated novel concept (e.g., we add the token "hamster" to shift our embedding from generating images resembling a "hamster").
-                      </li>
+                      <li> To gradually generate more unique creations, during training, we query a pretrained BLIP-2 VQA model to expand the set of negative classes based on the currently generated novel concept.
                       <br>
                     </ul>
                 </div>
@@ -290,10 +267,10 @@ ative process.
                     <h2 class="title is-3">What Can it Do?</h2>
                     <div class="content has-text-centered">
                     </div>
-                    <h3 class="title is-4">Generating Creative New Concepts</h3>
+                    <h3 class="title is-4">Creative Generation</h3>
                     <p class="content has-text-centered">
-                        Using our Adaptive Negatives system, users can generate new concepts that are different from existing ones.
-                        Concepts can be tangible entities, like "Super-Hero", "Building" or "Pet", or abstract ones, like "Art Style".
+                        Using our <i>Adaptive Negatives</i> scheme, users can generate new concepts that are different from existing ones.
+                        Concepts can be tangible entities, like "superhero", "building" or "pet", or abstract ones, like new art styles.
                     </p>
                 </div>
             </div>
@@ -320,37 +297,23 @@ ative process.
             <div class="column is-centered has-text-centered">
                   <img src="static/figures/mix_tree.png" alt="mix_tree" width="80%"/>
               </div>
-<!--          <div id="results-carousel-3" class="carousel results-carousel">-->
-<!--              <div class="column is-centered has-text-centered">-->
-<!--                  <img src="static/figures/decomposition_1.png" alt="decomposition_1" width="80%"/>-->
-<!--              </div>-->
-<!--              <div class="column is-centered has-text-centered">-->
-<!--                  <img src="static/figures/decomposition_2.png" alt="decomposition_2" width="80%"/>-->
-<!--              </div>-->
-<!--          </div>-->
 
-<!--          <div class="columns is-centered has-text-centered">-->
-<!--            <div class="column is-four-fifths">-->
-<!--                <div class="content has-text-centered">-->
-<!--                </div>-->
-<!--                <h3 class="title is-4">Style Mixing</h3>-->
-<!--                <p class="content has-text-centered">-->
-<!--                    We can also mix the geometry and appearance of two learned concepts.-->
-<!--                    By starting to perform the mixing at different timesteps, we can control how much information is passed from the geometry concept-->
-<!--                    to the output image.-->
-<!--                </p>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <div id="results-carousel-4" class="carousel results-carousel">-->
-<!--            <div class="column is-centered has-text-centered">-->
-<!--                <img src="static/figures/mixing_1.png" alt="mixing_1" width="90%"/>-->
-<!--            </div>-->
-<!--            <div class="column is-centered has-text-centered">-->
-<!--                <img src="static/figures/mixing_2.png" alt="mixing_2" width="90%"/>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        </div>-->
-<!--        </div>-->
+
+              <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <div class="content has-text-centered">
+                    </div>
+                    <h3 class="title is-4">Concept Mixing</h3>
+                    <p class="content has-text-centered">
+                        With ConceptLab, we can also form hybrid concepts by merging unique traits across multiple real concepts. This can be done by defining 
+                        multiple positive concepts, allowing us to create unique creations such as a lobs-turtle, pine-melon, and more!
+                    </p>
+                </div>
+            </div>
+              <div class="column is-centered has-text-centered">
+                    <img src="static/figures/concept_mixing.png" alt="concept_mixing" width="70%"/>
+                </div>
+
 
     </section>
 

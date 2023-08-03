@@ -152,7 +152,7 @@ body {
 
 @counter-style emoji-bullets {
   system: cyclic;
-  symbols: "\1F680""\1F415""\1F916";
+  symbols: "\1F680""\1F436""\1F916";
   suffix: " ";
 }
 

@@ -1,0 +1,14 @@
+cache_root: "/tmp/kandinsky2"
+output_dir: ""
+placeholder_token: "myart"
+initializer_token: "art"
+learnable_property: "style"
+log_image_frequency: 250
+log_embed_frequency: 250
+img_size: 512
+train_batch_size: 1
+steps: 2500
+positive_classes: ["art"] # Positive class is not really used for style mode, just a placeholder
+seed: 0
+min_cosine_thr: 0.15
+live_negatives: True

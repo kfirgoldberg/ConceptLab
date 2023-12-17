@@ -1,0 +1,9 @@
+pyrallis
+opencv-python
+clip @ git+https://github.com/openai/CLIP.git@a9b1bf5920416aaeaec965c25dd9e8f98c864f16
+matplotlib==3.7.2
+accelerate==0.21.0
+setuptools==59.5.0
+huggingface_hub==0.16.4
+transformers==4.31.0
+torchmetrics==0.6.0

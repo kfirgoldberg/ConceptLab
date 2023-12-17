@@ -1,0 +1,12 @@
+cache_root: "/tmp/kandinsky2"
+output_dir: ""
+placeholder_token: "mypet"
+initializer_token: "pet"
+log_image_frequency: 250
+log_embed_frequency: 250
+img_size: 512
+train_batch_size: 1
+steps: 2500
+positive_classes: ["pet"]
+seed: 0
+live_negatives: True

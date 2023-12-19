@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
 
-    <meta property="og:title" content="ConceptLab: Creative Generation using Diffusion Prior Constraints"/>
+    <meta property="og:title" content="ConceptLab: Creative Concept Generation using VLM-Guided Diffusion Prior Constraints"/>
     <meta property="og:url" content="https://ConceptLab.github.io/ConceptLab/"/>
     <meta property="og:image" content="static/images/og_tag_header_image.jpg"/>
     <meta property="og:image:width" content="1200"/>
@@ -39,7 +39,7 @@
         <div class="container is-max-widescreen">
             <!-- <div class="columns is-centered"> -->
             <div class="column has-text-centered">
-                <h1 class="title is-1 publication-title">ConceptLab: Creative Generation using Diffusion Prior Constraints</h1>
+                <h1 class="title is-1 publication-title">ConceptLab: Creative Concept Generation using VLM-Guided Diffusion Prior Constraints</h1>
             </div>
         </div>
     </div>
@@ -100,7 +100,10 @@
                 <div class="container">
                     <div class="item">
                         <div class="column is-centered has-text-centered">
-                            <img src="static/figures/teaser.png" alt="NeTI"/>
+                                  <video id="teaser" autoplay muted loop playsinline height="100%">
+                                <source src="./static/figures/conceptlab.mp4"
+                                        type="video/mp4">
+                              </video>
                             <h2 class="subtitle">
                                 New pets generated using ConceptLab. Each pair depicts a learned concept that was optimized to be novel and not match existing
 members of the pet category. Running our method with different seeds allows us to generate a variety of different brand-new concepts.
@@ -119,7 +122,7 @@ members of the pet category. Running our method with different seeds allows us t
                     <h2 class="title is-3">Abstract</h2>
                     <div class="content has-text-justified">
                         <p>
-                            Recent text-to-image generative models have enabled us to transform our words into vibrant, captivating imagery. The surge of personalization techniques that has followed has also allowed us to imagine unique concepts in new scenes. However, an intriguing question remains: How can we generate a <i>new</i>, imaginary concept that has never been seen before? In this paper, we present the task of <i>creative text-to-image generation</i>, where we seek to generate new members of a broad category (e.g., generating a pet that differs from all existing pets). We leverage the under-studied Diffusion Prior models and show that the creative generation problem can be formulated as an optimization process over the output space of the diffusion prior, resulting in a set of "prior constraints". To keep our generated concept from converging into existing members, we incorporate a question-answering model that adaptively adds new constraints to the optimization problem, encouraging the model to discover increasingly more unique creations. Finally, we show that our prior constraints can also serve as a strong mixing mechanism allowing us to create hybrids between generated concepts, introducing even more flexibility into the creative process.
+                            Recent text-to-image generative models have enabled us to transform our words into vibrant, captivating imagery. The surge of personalization techniques that has followed has also allowed us to imagine unique concepts in new scenes. However, an intriguing question remains: How can we generate a <i>new</i>, imaginary concept that has never been seen before? In this paper, we present the task of <i>creative text-to-image generation</i>, where we seek to generate new members of a broad category (e.g., generating a pet that differs from all existing pets). We leverage the under-studied Diffusion Prior models and show that the creative generation problem can be formulated as an optimization process over the output space of the diffusion prior, resulting in a set of "prior constraints". To keep our generated concept from converging into existing members, we incorporate a question-answering Vision-Language Model (VLM) that adaptively adds new constraints to the optimization problem, encouraging the model to discover increasingly more unique creations. Finally, we show that our prior constraints can also serve as a strong mixing mechanism allowing us to create hybrids between generated concepts, introducing even more flexibility into the creative process.
                         </p>
                     </div>
                 </div>
@@ -206,11 +209,10 @@ members of the pet category. Running our method with different seeds allows us t
                       <li> We optimize a single embedding \(\mathcal{v_*}\) representing the novel concept we wish to generate (e.g., a new type of "pet").
                       </li>
                       <br>
-                      <li> We compute a set of losses encouraging the learned embedding \(\mathcal{v_*}\) to be similar to that of the target category while being different from a set of negative sub-classes (e.g., "dog", "cat").
-                           This similarity is computed in the output space of a <i>Diffusion Prior</i> model.  
+                      <li> We compute a set of constraints in the output space of a <i>Diffusion Prior</i> model, guiding the learned embedding \(\mathcal{v_*}\) to be similar to the target category while being different from existing members (e.g., "dog", "cat").
                       </li>
                       <br>
-                      <li> To gradually generate more unique creations, during training, we query a pretrained BLIP-2 VQA model to gradually expand the set of negative classes based on the currently generated novel concept.
+                      <li> We use VLM guidance from a pretrained BLIP-2 model to gradually expand the set of negative classes, resulting in more creative generations.
                       <br>
                     </ul>
                 </div>
@@ -246,7 +248,7 @@ members of the pet category. Running our method with different seeds allows us t
                   </div>
                   <h3 class="title is-4">Evolutionary Generation</h3>
                   <p class="content has-text-centered">
-                      ConceptLab can be used to mix up generated concepts to iteratively learn new unique creations. 
+                      ConceptLab can be used to mix up generated concepts to iteratively learn new unique creations.
                       This process can be repeated to create further "Generations", each one being a hybrid between the previous two.
                   </p>
               </div>
@@ -262,7 +264,7 @@ members of the pet category. Running our method with different seeds allows us t
                     </div>
                     <h3 class="title is-4">Concept Mixing</h3>
                     <p class="content has-text-centered">
-                        With ConceptLab, we can also form hybrid concepts by merging unique traits across multiple real concepts. This can be done by defining 
+                        With ConceptLab, we can also form hybrid concepts by merging unique traits across multiple real concepts. This can be done by defining
                         multiple positive concepts, allowing us to create unique creations such as a lobs-turtle, pine-melon, and more!
                     </p>
                 </div>
